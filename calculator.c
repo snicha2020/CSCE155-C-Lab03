@@ -1,7 +1,7 @@
 /**
- * Author: 
- * Date: 
- * 
+ * Author:
+ * Date:
+ *
  * This programs provides basic calculator functionality
  * allowing a user to enter two operands and to compute
  * various calculated values.
@@ -34,24 +34,47 @@ int main(int argc, char **argv) {
 
   switch(choice) {
     case 1:
-      printf("%f", a + b);
+      printf("%f\n", a + b);
       break;
     case 2:
       result = a - b;
-      printf("%f", result);
+      printf("%f\n", result);
       break;
     case 3:
-      //TODO: handle this case    
+      result = a * b;
+      printf("%f\n", result);
+      break;
     case 4:
-      //TODO: handle this case
+      if (b == 0) {
+        printf("Error: cannot divide by 0\n");
+      } else {
+        result = a / b;
+        printf("%f\n", result);
+      }
+      break;
     case 5:
-      //TODO: handle this case
+      if (a < b) {
+        result = a;
+      } else {
+        result = b;
+      }
+      printf("%f\n", result);
+      break;
     case 6:
-      //TODO: handle this case
+      result = pow(a, b);
+      printf("%f\n", result);
+      break;
     case 7:
-      //TODO: handle this case
+      if (a > 0 && b > 0) {
+        result = log(b)/log(a);
+        printf("%f\n", result);
+      }
+      else {
+        printf("ERROR: operand(s) cannot be zero\n");
+      };
+      break;
     default:
-      printf("Please input a valid operator next time");
+      printf("Please input a valid operator next time\n");
   }
 
   return 0;
